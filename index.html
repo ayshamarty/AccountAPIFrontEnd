@@ -1,0 +1,47 @@
+<html>
+
+<head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <form>
+        <div>
+            <input type="button" onclick="readAll()" value="Get all accounts"> 
+
+        </div>
+        <div>
+            Find an account (enter ID number) 
+            <input id="num1" type="number"><br>
+            <input type="button" onclick="read(num1.value)" value="Get an account"> 
+        </div>
+
+        <div>
+            Create an account<br>
+            Enter account number 
+            <input id="accNumber" type="number"><br>
+            Enter first name
+            <input id="fName" type="text"><br>
+            Enter last number 
+            <input id="lName" type="text"><br>
+            <input type="button" onclick="create()" value="Create account"> </input>
+        </div>
+        <div>
+            Delete an account<br>
+            Enter account ID
+            <input id="accToDelete" type="number"><br>
+            <input type="button" onclick="destroy(accToDelete.value)" value="Delete account"> 
+        </div>
+        <div>
+            <p> Result =
+                <span id="result">
+                </span>
+            </p>
+        </div>
+    </form>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
