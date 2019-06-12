@@ -1,44 +1,90 @@
 <html>
 
 <head>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
     <form>
-        <div>
-            <input type="button" onclick="readAll()" value="Get all accounts"> 
-
-        </div>
-        <div>
-            Find an account (enter ID number) 
-            <input id="num1" type="number"><br>
-            <input type="button" onclick="read(num1.value)" value="Get an account"> 
-        </div>
 
         <div>
-            Create an account<br>
-            Enter account number 
-            <input id="accNumber" type="number"><br>
-            Enter first name
-            <input id="fName" type="text"><br>
-            Enter last number 
-            <input id="lName" type="text"><br>
-            <input type="button" onclick="create()" value="Create account"> </input>
+            <h1>Find an account</h1>
+            Enter ID number
+            <input id="num1" type="number" placeholder="enter ID number">
+            <input type="button" onclick="readOne(num1.value)" value="Get account">
+            <input type="button" onclick="readAll()" value="Get all accounts">
+            <div id="AccountCards">
+            </div>
+            <div id="readNotification">
+
+            </div>
         </div>
         <div>
-            Delete an account<br>
-            Enter account ID
-            <input id="accToDelete" type="number"><br>
-            <input type="button" onclick="destroy(accToDelete.value)" value="Delete account"> 
+            <p id="readTextNotification"></p>
         </div>
-        <div>
-            <p> Result =
-                <span id="result">
-                </span>
-            </p>
+        <hr>
         </div>
     </form>
+    <form onsubmit="create()">
+
+        <div>
+            <h1>Create an account</h1>
+
+            Enter account number:
+            <input id="accNumber" type="number" placeholder="enter account number" required>
+            Enter first name:
+            <input id="fName" type="text" placeholder="enter first name" required>
+            Enter last name:
+            <input id="lName" type="text" placeholder="enter first name" required>
+            <input type="submit" value="Create account"> </input>
+            <div>
+                <p>
+                    <span id="createNotification">
+                    </span>
+                </p>
+            </div>
+            <hr>
+        </div>
+    </form>
+    <form onsubmit="update(idToChange.value, updateAccNumber, updateFName, updateLName)">
+        <div>
+            <h1>Update an account</h1>
+
+            Enter account number:
+            <input id="updateAccNumber" type="number" placeholder="enter account number" required>
+            Enter first name:
+            <input id="updateFName" type="text" placeholder="enter first name" required>
+            Enter last name:
+            <input id="updateLName" type="text" placeholder="enter last name" required>
+            Enter ID:
+            <input id="idToChange" type="number" placeholder="enter ID number" required>
+            <input type="submit" value="Update account"> </input>
+            <div>
+                <p>
+                    <span id="updateNotification">
+                    </span>
+                </p>
+            </div>
+            <hr>
+        </div>
+    </form>
+    <form>
+        <div>
+            <h1>Delete an account</h1>
+            Enter account ID
+            <input id="accToDelete" type="number" placeholder="enter ID number">
+            <input type="button" onclick="destroy(accToDelete.value)" value="Delete account">
+            <div>
+                <p>
+                    <span id="deleteNotification">
+                    </span>
+                </p>
+            </div>
+            <hr>
+        </div>
+    </form>
+
 
 
     <script src="index.js"></script>
